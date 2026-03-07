@@ -4,6 +4,7 @@ import Hero from './components/Hero';
 import About from './components/About';
 import Skills from './components/Skills';
 import Projects from './components/Projects';
+import Research from './components/Research';
 import Experience from './components/Experience';
 import Contact from './components/Contact';
 import { Github, Linkedin, Mail, ArrowUp } from 'lucide-react';
@@ -100,6 +101,7 @@ function App() {
         <About />
         <Experience />
         <Education />
+        <Research />
         <Projects />
         <Skills />
         <Contact />

@@ -8,10 +8,11 @@ import {
 // ─── VIDEO FILES ────────────────────────────────────────────────────────────
 // Drop your .mp4 / .mov / .webm files into:
 //   frontend/public/videos/
-// Then add an entry here for each one.
+//   Or you can add a Google Drive link using the 'link' property.
+//   If using 'link', provide an optional 'thumbnail' image path for the preview.
 const myVideos = [
     {
-        src: 'c:\Users\Hasindu\Desktop\protpolyo\frontend\public\videos\AI-Voice-5.mp4',
+        src: 'c:\\Users\\Hasindu\\Desktop\\protpolyo\\frontend\\public\\videos\\AI-Voice-5.mp4',
         title: 'AI Voice',
         description: 'BITCODE',
     },
@@ -30,8 +31,9 @@ const myVideos = [
         title: 'Edit 2',
         description: 'Cinematic color grade',
     },
-    // Add more entries here as you drop files in:
+    // Add more entries here:
     // { src: '/videos/my-edit.mp4', title: 'My Edit', description: '...' },
+    // { link: 'https://drive.google.com/file/d/...', thumbnail: '/images/thumb1.jpg', title: 'Drive Video', description: '...' },
 ];
 
 // ─── SKILL CATEGORIES ───────────────────────────────────────────────────────
@@ -257,16 +259,26 @@ const VideoGallery = ({ accent }) => {
                 {myVideos.map((v, i) => (
                     <button
                         key={i}
-                        onClick={() => setActive(v)}
+                        onClick={() => {
+                            if (v.link) {
+                                window.open(v.link, '_blank', 'noopener,noreferrer');
+                            } else {
+                                setActive(v);
+                            }
+                        }}
                         className="group relative rounded-2xl overflow-hidden bg-slate-100 aspect-video flex items-center justify-center border border-slate-200 hover:border-pink-300 hover:shadow-lg transition-all"
                     >
-                        {/* Thumbnail — the browser will show first frame of the video */}
-                        <video
-                            src={v.src}
-                            className="absolute inset-0 w-full h-full object-cover"
-                            preload="metadata"
-                            muted
-                        />
+                        {/* Thumbnail */}
+                        {v.thumbnail ? (
+                            <img src={v.thumbnail} className="absolute inset-0 w-full h-full object-cover" alt={v.title} />
+                        ) : v.src ? (
+                            <video
+                                src={v.src}
+                                className="absolute inset-0 w-full h-full object-cover"
+                                preload="metadata"
+                                muted
+                            />
+                        ) : null}
                         {/* Overlay */}
                         <div className="absolute inset-0 bg-black/30 group-hover:bg-black/20 transition-colors" />
                         <div

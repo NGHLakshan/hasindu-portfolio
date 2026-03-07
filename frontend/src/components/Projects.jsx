@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Github, ChevronDown, ChevronUp } from 'lucide-react';
 
@@ -65,10 +65,11 @@ const cardVariants = {
     }),
 };
 
-const ProjectCard = ({ project, i, isExpanded, onToggle }) => {
+const ProjectCard = ({ project, i, isExpanded, onToggle, cardRef }) => {
 
     return (
         <motion.div
+            ref={cardRef}
             custom={i}
             initial="hidden"
             whileInView="visible"
@@ -183,6 +184,21 @@ const ProjectCard = ({ project, i, isExpanded, onToggle }) => {
 
 const Projects = () => {
     const [expandedIndex, setExpandedIndex] = useState(null);
+    const cardsRef = useRef([]);
+
+    useEffect(() => {
+        const handleClickOutside = (event) => {
+            if (expandedIndex !== null) {
+                const expandedCard = cardsRef.current[expandedIndex];
+                if (expandedCard && !expandedCard.contains(event.target)) {
+                    setExpandedIndex(null);
+                }
+            }
+        };
+
+        document.addEventListener('mousedown', handleClickOutside);
+        return () => document.removeEventListener('mousedown', handleClickOutside);
+    }, [expandedIndex]);
 
     const handleToggle = (i) => {
         setExpandedIndex(prev => (prev === i ? null : i));
@@ -203,7 +219,14 @@ const Projects = () => {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
                     {projects.map((project, i) => (
-                        <ProjectCard key={i} project={project} i={i} isExpanded={expandedIndex === i} onToggle={handleToggle} />
+                        <ProjectCard
+                            key={i}
+                            project={project}
+                            i={i}
+                            isExpanded={expandedIndex === i}
+                            onToggle={handleToggle}
+                            cardRef={el => cardsRef.current[i] = el}
+                        />
                     ))}
                 </div>
             </div>

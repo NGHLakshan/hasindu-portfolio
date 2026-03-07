@@ -5,6 +5,7 @@ import { Menu, X, Github, Linkedin } from 'lucide-react';
 const navLinks = [
     { name: 'About', href: '#about' },
     { name: 'Education', href: '#education' },
+    { name: 'Research', href: '#research' },
     { name: 'Experience', href: '#experience' },
     { name: 'Projects', href: '#projects' },
     { name: 'Skills', href: '#skills' },
@@ -28,8 +29,8 @@ const Navbar = () => {
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.6, ease: 'easeOut' }}
             className={`fixed w-full z-50 transition-all duration-300 ${scrolled
-                    ? 'bg-white/90 backdrop-blur-xl shadow-lg shadow-slate-200/60 border-b border-slate-100'
-                    : 'bg-transparent'
+                ? 'bg-white/90 backdrop-blur-xl shadow-lg shadow-slate-200/60 border-b border-slate-100'
+                : 'bg-transparent'
                 }`}
         >
             <div className="max-w-7xl mx-auto px-6 lg:px-12">
@@ -50,8 +51,8 @@ const Navbar = () => {
                                 href={link.href}
                                 onClick={() => setActive(link.name)}
                                 className={`relative px-4 py-2 text-sm font-medium rounded-full transition-all duration-200 ${active === link.name
-                                        ? 'text-emerald-600 bg-emerald-50'
-                                        : 'text-slate-500 hover:text-slate-900 hover:bg-slate-100'
+                                    ? 'text-emerald-600 bg-emerald-50'
+                                    : 'text-slate-500 hover:text-slate-900 hover:bg-slate-100'
                                     }`}
                             >
                                 {link.name}
