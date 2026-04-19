@@ -6,11 +6,10 @@ const experiences = [
     {
         role: 'Data Administrator Intern',
         company: 'Neuratech (Pvt) Ltd',
-        period: 'August 2025 – Present',
+        period: 'August 2025 - Six Month',
         location: 'Sri Lanka',
         description: 'Responsible for data management, automation, and reporting. Handling data scraping, cleaning, and validation to support data-driven decision making.',
         tags: ['Python', 'Power BI', 'Excel', 'SQL'],
-        current: true,
     },
 ];
 
@@ -18,10 +17,9 @@ const educations = [
     {
         degree: 'Bachelor of Science (Hons) in Information Systems',
         school: 'Rajarata University of Sri Lanka',
-        period: '2021 – Present',
+        period: '2021 - 2026  Degree Requirements Completed, Awaiting Graduation',
         location: 'Sri Lanka',
         tags: ['Information Systems', 'Databases', 'Software Engineering'],
-        current: true,
     },
 ];
 

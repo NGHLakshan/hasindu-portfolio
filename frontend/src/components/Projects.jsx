@@ -54,6 +54,38 @@ export const projects = [
         accent: 'bg-amber-500',
         emoji: '🚗',
     },
+    {
+        title: 'Tuk-Tuk Finance Manager',
+        role: 'Full-stack Developer',
+        tools: ['React', 'Vite', 'PWA', 'Node.js'],
+        description: 'Developed a Progressive Web App (PWA) for managing Tuk-Tuk finances, featuring transaction tracking, offline support, and rent management settings.',
+        features: [
+            'Transaction Tracking',
+            'Offline Support (PWA)',
+            'Rent Management',
+            'Expense Categories',
+        ],
+        github: 'https://github.com/NGHLakshan/Tuk_Tuk',
+        color: 'from-emerald-50 to-teal-50',
+        accent: 'bg-emerald-500',
+        emoji: '🛺',
+    },
+    {
+        title: 'Gym Management Application',
+        role: 'Python Developer',
+        tools: ['Python', 'Excel Integration'],
+        description: 'Built an application to track gym member attendance and manage payment alerts, including real-time warnings for overdue payments.',
+        features: [
+            'Attendance Tracking',
+            'Payment alerts & warnings',
+            'Real-time Member Status',
+            'Excel Integration',
+        ],
+        github: 'https://github.com/NGHLakshan/Gym',
+        color: 'from-purple-50 to-fuchsia-50',
+        accent: 'bg-purple-500',
+        emoji: '💪',
+    },
 ];
 
 const cardVariants = {

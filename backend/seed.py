@@ -33,7 +33,7 @@ def seed_data():
         education = models.Education(
             degree="Bachelor of Science (Hons) in Information Systems",
             institution="Rajarata University of Sri Lanka",
-            period="2021 - Present",
+            period="2021 - 2026  Degree Requirements Completed, Awaiting Graduation",
             profile_id=new_user.id
         )
         db.add(education)
@@ -42,7 +42,7 @@ def seed_data():
         experience = models.Experience(
             role="Data Administrator Intern",
             company="Neuratech (Pvt) Ltd",
-            period="August 2025 - Present",
+            period="August 2025 - Six Month",
             description="Responsible for data management, automation, and reporting. Handling data scraping, cleaning, and validation to support data-driven decision making.",
             profile_id=new_user.id
         )
