@@ -65,6 +65,22 @@ def seed_data():
                 github_link="https://github.com/NGHLakshan/expert_garage",
                 description="Designed a responsive web platform for managing auto service bookings. Developed user login, logout, and booking management.",
                 profile_id=new_user.id
+            ),
+            models.Project(
+                title="Tuk-Tuk Finance Manager",
+                role="Full-stack Developer",
+                tools="React, Vite, PWA, Node.js",
+                github_link="https://github.com/NGHLakshan/Tuk_Tuk",
+                description="Developed a Progressive Web App (PWA) for managing Tuk-Tuk finances, featuring transaction tracking, offline support, and rent management settings.",
+                profile_id=new_user.id
+            ),
+            models.Project(
+                title="Gym Management Application",
+                role="Python Developer",
+                tools="Python, Excel Integration",
+                github_link="https://github.com/NGHLakshan/Gym",
+                description="Built an application to track gym member attendance and manage payment alerts, including real-time warnings for overdue payments.",
+                profile_id=new_user.id
             )
         ]
         db.add_all(projects)
