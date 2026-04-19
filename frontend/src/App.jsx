@@ -33,7 +33,7 @@ const ScrollToTop = () => {
 
 // Education section (simple, clean)
 const Education = () => (
-  <section id="education" className="section-padding bg-white">
+  <section id="certifications" className="section-padding bg-white">
     <div className="max-w-7xl mx-auto">
       <div className="text-center mb-16">
         <span className="section-tag">📚 Academics</span>
@@ -100,8 +100,8 @@ function App() {
         <Hero />
         <About />
         <Experience />
-        <Education />
         <Research />
+        <Education />
         <Projects />
         <Skills />
         <Contact />
