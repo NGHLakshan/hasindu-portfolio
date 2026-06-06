@@ -117,6 +117,7 @@ export const projects = [
             'TailwindCSS Styling',
         ],
         github: 'https://github.com/NGHLakshan/Tuk_Tuk',
+        screenshot: '/tuktuk-screenshot.png',
         color: 'from-yellow-50 to-lime-50',
         accent: 'bg-yellow-500',
         emoji: '🛺',
