@@ -99,6 +99,7 @@ export const projects = [
             'Desktop GUI Application',
         ],
         github: 'https://github.com/NGHLakshan/Gym',
+        screenshot: '/gym-screenshot.png',
         color: 'from-red-50 to-orange-50',
         accent: 'bg-red-500',
         emoji: '🏋️',
