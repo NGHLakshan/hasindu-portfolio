@@ -81,6 +81,7 @@ export const projects = [
             'Secure Local Operation',
         ],
         github: 'https://github.com/NGHLakshan/python-forensic-carver',
+        screenshot: '/forensic-tool-screenshot.png',
         color: 'from-purple-50 to-fuchsia-50',
         accent: 'bg-purple-600',
         emoji: '🔎',
@@ -172,6 +173,17 @@ const ProjectCard = ({ project, i }) => {
                                             <source src={project.video} type="video/mp4" />
                                             Your browser does not support the video tag.
                                         </video>
+                                    </div>
+                                )}
+
+                                {/* Preview Screenshot */}
+                                {project.screenshot && (
+                                    <div className="relative rounded-2xl overflow-hidden border border-slate-200 mb-4 shadow-inner">
+                                        <img
+                                            src={project.screenshot}
+                                            alt={`${project.title} screenshot`}
+                                            className="w-full h-full object-cover rounded-2xl"
+                                        />
                                     </div>
                                 )}
 
