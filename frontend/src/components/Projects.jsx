@@ -86,6 +86,40 @@ export const projects = [
         accent: 'bg-purple-600',
         emoji: '🔎',
     },
+    {
+        title: 'Gym Management System',
+        role: 'Developer',
+        tools: ['Python', 'Excel', 'openpyxl', 'Tkinter'],
+        description: 'A desktop-based gym management application featuring member tracking, attendance management, and automated Excel report generation with macro support.',
+        features: [
+            'Member Registration & Tracking',
+            'Attendance Management',
+            'Automated Excel Reports',
+            'Macro-Enabled Spreadsheets',
+            'Desktop GUI Application',
+        ],
+        github: 'https://github.com/NGHLakshan/Gym',
+        color: 'from-red-50 to-orange-50',
+        accent: 'bg-red-500',
+        emoji: '🏋️',
+    },
+    {
+        title: 'Tuk Tuk Booking App',
+        role: 'Front-end Developer',
+        tools: ['React', 'Vite', 'TailwindCSS', 'JavaScript'],
+        description: 'A modern, responsive front-end web application for a Tuk Tuk ride booking service. Built with React and Vite for a fast, smooth user experience.',
+        features: [
+            'Ride Booking Interface',
+            'Responsive Design',
+            'Modern React Architecture',
+            'Fast Vite Build System',
+            'TailwindCSS Styling',
+        ],
+        github: 'https://github.com/NGHLakshan/Tuk_Tuk',
+        color: 'from-yellow-50 to-lime-50',
+        accent: 'bg-yellow-500',
+        emoji: '🛺',
+    },
 ];
 
 const cardVariants = {
