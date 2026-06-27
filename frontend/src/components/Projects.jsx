@@ -122,6 +122,23 @@ export const projects = [
         accent: 'bg-yellow-500',
         emoji: '🛺',
     },
+    {
+        title: 'Predictive Hard Drive Failure Dashboard',
+        role: 'Data Analyst',
+        tools: ['Power BI', 'DAX', 'Data Modeling', 'Predictive Analytics'],
+        description: 'Engineered an enterprise-level Power BI dashboard to analyze raw SMART data, shifting from reactive data recovery to proactive data migration by identifying early warning signals.',
+        features: [
+            'Vulnerability Pattern Detection',
+            'Predictive SMART Signal Tracking',
+            'Interactive Executive Interface',
+            'Early Warning System (EWS) Architecture',
+        ],
+        github: 'https://github.com/NGHLakshan', // Generic link until specific one is provided
+        video: 'https://youtu.be/9K5gQ7elwE8',
+        color: 'from-rose-50 to-red-50',
+        accent: 'bg-rose-500',
+        emoji: '📊',
+    },
 ];
 
 const cardVariants = {
@@ -201,14 +218,25 @@ const ProjectCard = ({ project, i }) => {
                                 {/* Preview Video */}
                                 {project.video && (
                                     <div className="relative rounded-2xl overflow-hidden bg-slate-900 border border-slate-200 aspect-video mb-4 shadow-inner">
-                                        <video
-                                            controls
-                                            playsInline
-                                            className="w-full h-full object-contain mx-auto"
-                                        >
-                                            <source src={project.video} type="video/mp4" />
-                                            Your browser does not support the video tag.
-                                        </video>
+                                        {project.video.includes('youtube.com') || project.video.includes('youtu.be') ? (
+                                            <iframe
+                                                className="w-full h-full"
+                                                src={`https://www.youtube.com/embed/${project.video.split('/').pop().split('?')[0].split('&')[0]}`}
+                                                title="YouTube video player"
+                                                frameBorder="0"
+                                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                                allowFullScreen
+                                            ></iframe>
+                                        ) : (
+                                            <video
+                                                controls
+                                                playsInline
+                                                className="w-full h-full object-contain mx-auto"
+                                            >
+                                                <source src={project.video} type="video/mp4" />
+                                                Your browser does not support the video tag.
+                                            </video>
+                                        )}
                                     </div>
                                 )}
 
